@@ -1,0 +1,20 @@
+● named.service - Berkeley Internet Name Domain (DNS)
+     Loaded: loaded (/usr/lib/systemd/system/named.service; enabled; vendor preset: disabled)
+     Active: active (running) since Sat 2022-07-30 12:47:23 -03; 4h 28min ago
+   Main PID: 643 (named)
+      Tasks: 4 (limit: 2342)
+     Memory: 61.4M
+        CPU: 566ms
+     CGroup: /system.slice/named.service
+             └─643 /usr/sbin/named -u named -c /etc/named.conf
+
+Jul 30 12:47:23 localhost.localdomain named[643]: network unreachable resolving './NS/IN': 202.12.27.33#53
+Jul 30 12:47:23 localhost.localdomain named[643]: network unreachable resolving './DNSKEY/IN': 193.0.14.129#53
+Jul 30 12:47:23 localhost.localdomain named[643]: network unreachable resolving './NS/IN': 192.33.4.12#53
+Jul 30 12:47:23 localhost.localdomain named[643]: resolver priming query complete
+Jul 30 12:47:23 localhost.localdomain named[643]: network unreachable resolving './DNSKEY/IN': 202.12.27.33#53
+Jul 30 12:47:23 localhost.localdomain named[643]: network unreachable resolving './DNSKEY/IN': 192.33.4.12#53
+Jul 30 12:47:23 localhost.localdomain named[643]: managed-keys-zone: Unable to fetch DNSKEY set '.': failure
+Jul 30 12:47:24 okd4-bootstrap.lab.okd.local named[643]: network unreachable resolving './NS/IN': 2001:500:200::b#53
+Jul 30 12:47:25 okd4-bootstrap.lab.okd.local named[643]: resolver priming query complete
+Jul 30 16:50:17 okd4-bootstrap.lab.okd.local named[643]: managed-keys-zone: Key 20326 for zone . acceptance timer complete: key now trusted
