@@ -1,0 +1,103 @@
+{
+"ignition": {
+"config": {
+"merge": [
+{
+"source": "http://1.2.3.4/master.ign",
+"verification": {}
+}
+]
+},
+"security": {
+"tls": {}
+},
+"timeouts": {},
+"version": "3.0.0"
+},
+"passwd": {
+"users": [
+{
+"name": "sysadmin",
+"passwordHash": "....",
+"groups": [
+"sudo",
+"docker"
+]
+}
+]
+},
+"storage": {
+"files": [
+{
+"group": {},
+"overwrite": true,
+"path": "/etc/hostname",
+"user": {},
+"contents": {
+"source": "data:,master-03.kur-test.ars.de",
+"verification": {}
+},
+"mode": 420
+},
+{
+"group": {},
+"overwrite": true,
+"path": "/etc/hosts",
+"user": {},
+"contents": {
+"source": "data:text/plain;base64,.....",
+"verification": {}
+},
+"mode": 420
+},
+{
+"group": {},
+"overwrite": true,
+"path": "/etc/NetworkManager/system-connections/ens192.nmconnection",
+"user": {},
+"contents": {
+"source": "data:text/plain;base64,...",
+"verification": {}
+},
+"mode": 384
+},
+{
+"group": {},
+"overwrite": true,
+"path": "/etc/chrony.conf",
+"user": {},
+"contents": {
+"source": "data:text/plain;base64,...",
+"verification": {}
+},
+"mode": 384
+},
+{
+"group": {},
+"overwrite": true,
+"path": "/etc/pki/ca-trust/source/anchors/ca-chain.crt",
+"user": {},
+"contents": {
+"source": "data:text/plain;base64,....",
+"verification": {}
+},
+"mode": 384
+}
+],
+"links": [
+{
+"group": {},
+"path": "/etc/localtime",
+"user": {},
+"target": "../usr/share/zoneinfo/UTC"
+},
+{
+"group": {},
+"path": "/etc/resolv.conf",
+"user": {},
+"target": "../run/systemd/resolve/resolv.conf"
+}
+]
+},
+"systemd": {}
+}
